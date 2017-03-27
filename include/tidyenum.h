@@ -554,7 +554,6 @@ typedef enum
 #endif
     TidyDropEmptyElems,          /**< Discard empty elements */
     TidyDropEmptyParas,          /**< Discard empty p elements */
-    TidyDropFontTags,            /**< Discard presentation tags */
     TidyDropPropAttrs,           /**< Discard proprietary attributes */
     TidyDuplicateAttrs,          /**< Keep first or last duplicate attribute */
     TidyEmacs,                   /**< If true, format error output for GNU Emacs */
