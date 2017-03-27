@@ -78,11 +78,12 @@ static languageDefinition language_en = { whichPluralForm_en, {
         "This option specifies what level of accessibility checking, if any, "
         "that Tidy should perform. "
         "<br/>"
-        "Level <var>0 (Tidy Classic)</var> is equivalent to Tidy Classic's accessibility "
-        "checking. "
+        "Level <var>0 (Tidy Classic)</var> does not perform any specific WCAG "
+        "accessibility checks."
         "<br/>"
-        "For more information on Tidy's accessibility checking, visit "
-        "<a href=\"http://www.html-tidy.org/accessibility/\"> Tidy's Accessibility Page</a>. "
+        "Other values enable additional checking in accordance with the Web "
+        "Content Accessibility Guidelines (WCAG) version 1.0, with each option "
+        "adding an increased amount of lower priority checks."
     },
     {/* Important notes for translators:
         - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -93,12 +94,12 @@ static languageDefinition language_en = { whichPluralForm_en, {
         - The strings "Tidy" and "HTML Tidy" are the program name and must not
           be translated. */
       TidyAltText,                  0,
-        "This option specifies the default <code>alt=</code> text Tidy uses for "
-        "<code>&lt;img&gt;</code> attributes when the <code>alt=</code> attribute "
+        "This option specifies the default <code>alt</code> text Tidy uses for "
+        "<code>&lt;img&gt;</code> attributes when the <code>alt</code> attribute "
         "is missing. "
         "<br/>"
-        "Use with care, as it is your responsibility to make your documents accessible "
-        "to people who cannot see the images. "
+        "Use with care, as it is your responsibility to make your documents "
+        "accessible to people who cannot see the images. "
     },
     {/* Important notes for translators:
         - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -112,12 +113,12 @@ static languageDefinition language_en = { whichPluralForm_en, {
         "This option controls the deletion or addition of the <code>name</code> "
         "attribute in elements where it can serve as anchor. "
         "<br/>"
-        "If set to <var>yes</var> a <code>name</code> attribute, if not already "
-        "existing, is added along an existing <code>id</code> attribute if the DTD "
-        "allows it. "
+        "If set to <var>yes</var>, a <code>name</code> attribute, if not already "
+        "present, is added along an existing <code>id</code> attribute if the "
+        "DTD allows it. "
         "<br/>"
-        "If set to <var>no</var> any existing name attribute is removed if an "
-        "<code>id</code> attribute exists or has been added. "
+        "If set to <var>no</var>, any existing <code>name</code> attribute is "
+        "removed if an <code>id</code> attribute is present or has been added. "
     },
     {/* Important notes for translators:
         - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -128,8 +129,8 @@ static languageDefinition language_en = { whichPluralForm_en, {
         - The strings "Tidy" and "HTML Tidy" are the program name and must not
           be translated. */
       TidyAsciiChars,               0,
-        "Can be used to modify behavior of the <code>clean</code> option when set "
-        "to <var>yes</var>. "
+        "Can be used to modify behavior of the <code>clean</code> option when "
+        "set to <var>yes</var>. "
         "<br/>"
         "If set to <var>yes</var> when using <code>clean</code>, "
         "<code>&amp;emdash;</code>, <code>&amp;rdquo;</code>, and other named "
@@ -144,11 +145,11 @@ static languageDefinition language_en = { whichPluralForm_en, {
       - The strings "Tidy" and "HTML Tidy" are the program name and must not
       be translated. */
         TidyBlockTags,                0,
-        "This option specifies new block-level tags. This option takes a space or "
-        "comma separated list of tag names. "
+        "This option specifies new block-level tags. This option takes a space- "
+        "or comma-separated list of tag names. "
         "<br/>"
-        "Unless you declare new tags, Tidy will refuse to generate a tidied file if "
-        "the input includes previously unknown tags. "
+        "Unless you declare new tags, Tidy will refuse to generate a tidied "
+        "file if the input includes previously unknown tags. "
         "<br/>"
         "Note you can't change the content model for elements such as "
         "<code>&lt;table&gt;</code>, <code>&lt;ul&gt;</code>, "
@@ -166,13 +167,13 @@ static languageDefinition language_en = { whichPluralForm_en, {
       be translated. */
         TidyBodyOnly,                 0,
         "This option specifies if Tidy should print only the contents of the "
-        "body tag as an HTML fragment. "
+        "<code>body</code> tag as an HTML fragment. "
         "<br/>"
-        "If set to <var>auto</var>, this is performed only if the body tag has "
-        "been inferred. "
+        "If set to <var>auto</var>, then this is performed only if the "
+        "<code>body</code> tag has been inferred. "
         "<br/>"
-        "Useful for incorporating existing whole pages as a portion of another "
-        "page. "
+        "This option can be useful for tidying snippets of HTML, or for "
+        "extracting HTML from a complete document for re-used elsewhere. "
         "<br/>"
         "This option has no effect if XML output is requested. "
     },
@@ -197,11 +198,11 @@ static languageDefinition language_en = { whichPluralForm_en, {
       - The strings "Tidy" and "HTML Tidy" are the program name and must not
       be translated. */
         TidyCharEncoding,             0,
-        "This option specifies the character encoding Tidy uses for both the input "
-        "and output. "
+        "This option specifies the character encoding Tidy uses for both the "
+        "input and output. "
         "<br/>"
         "For <var>ascii</var> Tidy will accept Latin-1 (ISO-8859-1) character "
-        "values, but will use entities for all characters whose value &gt;127. "
+        "values, but will use entities for all characters of value &gt;127. "
         "<br/>"
         "For <var>raw</var>, Tidy will output values above 127 without "
         "translating them into entities. "
@@ -215,7 +216,7 @@ static languageDefinition language_en = { whichPluralForm_en, {
         "family of encodings e.g. ISO-2022-JP. "
         "<br/>"
         "For <var>mac</var> and <var>win1252</var>, Tidy will accept vendor "
-        "specific character values, but will use entities for all characters whose "
+        "specific character values, but will use entities for all characters of "
         "value &gt;127. "
         "<br/>"
         "For unsupported encodings, use an external utility to convert to and from "
@@ -271,9 +272,8 @@ static languageDefinition language_en = { whichPluralForm_en, {
       - The strings "Tidy" and "HTML Tidy" are the program name and must not
       be translated. */
         TidyCSSPrefix,                0,
-        "This option specifies the prefix that Tidy uses for styles rules. "
-        "<br/>"
-        "By default, <var>c</var> will be used. "
+        "This option specifies the prefix that Tidy uses when creating new "
+        "style rules. "
     },
     {/* Important notes for translators:
         - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -285,8 +285,8 @@ static languageDefinition language_en = { whichPluralForm_en, {
           be translated. */
       TidyDecorateInferredUL,       0,
         "This option specifies if Tidy should decorate inferred "
-        "<code>&lt;ul&gt;</code> elements with some CSS markup to avoid indentation "
-        "to the right. "
+        "<code>&lt;ul&gt;</code> elements with some CSS markup to avoid "
+        "indentation to the right. "
     },
     {/* Important notes for translators:
       - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -300,14 +300,14 @@ static languageDefinition language_en = { whichPluralForm_en, {
         "This option specifies the DOCTYPE declaration generated by Tidy. "
         "<br/>"
         "If set to <var>omit</var> the output won't contain a DOCTYPE "
-        "declaration. Note this this also implies <code>numeric-entities</code> is "
-        "set to <var>yes</var>."
+        "declaration. Note this this also implies <code>numeric-entities</code> "
+        "is set to <var>yes</var>."
         "<br/>"
         "If set to <var>html5</var> the DOCTYPE is set to "
         "<code>&lt;!DOCTYPE html&gt;</code>."
         "<br/>"
-        "If set to <var>auto</var> (the default) Tidy will use an educated guess "
-        "based upon the contents of the document."
+        "If set to <var>auto</var> Tidy will use an educated guess based upon "
+        "the contents of the document."
         "<br/>"
         "If set to <var>strict</var>, Tidy will set the DOCTYPE to the HTML4 or "
         "XHTML1 strict DTD."
@@ -375,8 +375,9 @@ static languageDefinition language_en = { whichPluralForm_en, {
       - The strings "Tidy" and "HTML Tidy" are the program name and must not
       be translated. */
         TidyDuplicateAttrs,           0,
-        "This option specifies if Tidy should keep the first or last attribute, if "
-        "an attribute is repeated, e.g. has two <code>align</code> attributes. "
+        "This option specifies if Tidy should keep the first or last attribute "
+        "in event an attribute is repeated, e.g. has two <code>align</code> "
+        "attributes. "
     },
     {/* Important notes for translators:
       - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -399,11 +400,11 @@ static languageDefinition language_en = { whichPluralForm_en, {
       - The strings "Tidy" and "HTML Tidy" are the program name and must not
       be translated. */
         TidyEmptyTags,                0,
-        "This option specifies new empty inline tags. This option takes a space "
-        "or comma separated list of tag names. "
+        "This option specifies new empty inline tags. This option takes a space- "
+        "or comma-separated list of tag names. "
         "<br/>"
-        "Unless you declare new tags, Tidy will refuse to generate a tidied file if "
-        "the input includes previously unknown tags. "
+        "Unless you declare new tags, Tidy will refuse to generate a tidied file "
+        "if the input includes previously unknown tags. "
         "<br/>"
         "Remember to also declare empty tags as either inline or blocklevel. "
         "<br/>"
@@ -471,7 +472,7 @@ static languageDefinition language_en = { whichPluralForm_en, {
       be translated. */
         TidyEscapeScripts,          0,
         "This option causes items that look like closing tags, like "
-        "<code>&lt;/g</code> to be escaped to <code>&lt;\\/g</code>. Set "
+        "<code>&lt;/g</code>, to be escaped to <code>&lt;\\/g</code>. Set "
         "this option to <var>no</var> if you do not want this."
     },
     {/* Important notes for translators:
@@ -498,8 +499,6 @@ static languageDefinition language_en = { whichPluralForm_en, {
         "This option specifies if Tidy should replace unexpected hyphens with "
         "<code>=</code> characters when it comes across adjacent hyphens. "
         "<br/>"
-        "The default is <var>yes</var>. "
-        "<br/>"
         "This option is provided for users of Cold Fusion which uses the "
         "comment syntax: <code>&lt;!--- ---&gt;</code>. "
     },
@@ -513,8 +512,8 @@ static languageDefinition language_en = { whichPluralForm_en, {
       be translated. */
         TidyFixUri,                   0,
         "This option specifies if Tidy should check attribute values that carry "
-        "URIs for illegal characters and if such are found, escape them as HTML4 "
-        "recommends. "
+        "URIs for illegal characters, and if such are found, escape them as "
+        "HTML4 recommends. "
     },
     {/* Important notes for translators:
       - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -528,8 +527,8 @@ static languageDefinition language_en = { whichPluralForm_en, {
         "This option specifies if Tidy should produce output even if errors are "
         "encountered. "
         "<br/>"
-        "Use this option with care; if Tidy reports an error, this "
-        "means Tidy was not able to (or is not sure how to) fix the error, so the "
+        "Use this option with care; if Tidy reports an error, this means that "
+        "Tidy was not able to (or is not sure how to) fix the error, so the "
         "resulting output may not reflect your intention. "
     },
     {/* Important notes for translators:
@@ -576,8 +575,8 @@ static languageDefinition language_en = { whichPluralForm_en, {
       - The strings "Tidy" and "HTML Tidy" are the program name and must not
       be translated. */
         TidyInCharEncoding,           0,
-        "This option specifies the character encoding Tidy uses for the input. See "
-        "<code>char-encoding</code> for more info. "
+        "This option specifies the character encoding Tidy uses for the input. "
+        "See <code>char-encoding</code> for more information. "
     },
     {/* Important notes for translators:
       - Use only <code></code>, <var></var>, <em></em>, <strong></strong>, and
@@ -1018,7 +1017,7 @@ static languageDefinition language_en = { whichPluralForm_en, {
         TidyPreTags,                  0,
         "This option specifies new tags that are to be processed in exactly the "
         "same way as HTML's <code>&lt;pre&gt;</code> element. This option takes a "
-        "space or comma separated list of tag names. "
+        "space- or comma-separated list of tag names. "
         "<br/>"
         "Unless you declare new tags, Tidy will refuse to generate a tidied file if "
         "the input includes previously unknown tags. "
